@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>СПА-салон «Сакура» — Уфа</title>
+<meta name="description" content="СПА-салон «Сакура» в Уфе: массаж, обертывания, пилинги, СПА-программы, уход за лицом и телом. ул. Архитектурная, 22.">
+<style>
+:root{
+  --pink:#d6336c; --pink-d:#a8204f; --pink-l:#fbe3ec; --blush:#fff6f9;
+  --ink:#2b1f24; --muted:#7a6a71; --line:#f0d6df; --card:#fff; --gold:#c9a24b;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Georgia,"Times New Roman",serif;color:var(--ink);background:var(--blush);line-height:1.6}
+h1,h2,h3{font-weight:500;line-height:1.2}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+.sans{font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(255,246,249,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:baseline;gap:8px;color:var(--pink);font-size:26px}
+.logo b{font-size:30px;font-weight:400}
+.logo small{font-size:13px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+nav ul{display:flex;gap:22px;list-style:none;font-size:15px}
+nav a:hover{color:var(--pink)}
+.btn{display:inline-block;background:var(--pink);color:#fff;padding:12px 26px;border-radius:999px;font-size:15px;border:0;cursor:pointer;transition:.2s}
+.btn:hover{background:var(--pink-d)}
+.btn.ghost{background:transparent;color:var(--pink);border:1px solid var(--pink)}
+.btn.ghost:hover{background:var(--pink);color:#fff}
+.burger{display:none;background:none;border:0;font-size:28px;color:var(--pink);cursor:pointer}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:110px 0 120px;text-align:center;
+  background:radial-gradient(circle at 20% 20%,#ffd9e6 0,transparent 45%),radial-gradient(circle at 85% 70%,#ffe9f0 0,transparent 50%),linear-gradient(#fff6f9,#fde8ef)}
+.hero .kanji{font-size:120px;line-height:1;color:var(--pink);opacity:.9}
+.hero h1{font-size:clamp(34px,6vw,60px);margin:10px 0 16px;color:var(--pink-d)}
+.hero p{max-width:560px;margin:0 auto 32px;font-size:19px;color:var(--muted)}
+.hero .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.petal{position:absolute;top:-40px;width:14px;height:18px;background:#f7a8c1;border-radius:80% 0 80% 0;opacity:.7;animation:fall linear infinite}
+@keyframes fall{to{transform:translateY(120vh) rotate(540deg)}}
+@media (prefers-reduced-motion:reduce){.petal{display:none}}
+
+/* sections */
+section{padding:80px 0}
+.title{text-align:center;margin-bottom:48px}
+.title h2{font-size:clamp(28px,4vw,40px);color:var(--pink-d)}
+.title p{color:var(--muted);margin-top:8px}
+.title::after{content:"✿";display:block;color:var(--pink);margin-top:10px;font-size:20px}
+
+.grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px;transition:.25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(214,51,108,.12)}
+.card .ic{font-size:30px;margin-bottom:10px}
+.card h3{font-size:22px;color:var(--pink-d);margin-bottom:10px}
+.card ul{list-style:none;font-size:15px;color:var(--muted)}
+.card li{padding:5px 0;border-bottom:1px dashed var(--line)}
+.card li:last-child{border:0}
+
+.alt{background:#fff}
+.prog{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.prog .card{position:relative;padding-top:34px}
+.prog .price{position:absolute;top:22px;right:24px;color:var(--pink);font-size:22px}
+.prog h3{padding-right:90px}
+.prog p{color:var(--muted);font-size:15px}
+.prog .time{display:inline-block;margin-top:12px;background:var(--pink-l);color:var(--pink-d);padding:3px 12px;border-radius:99px;font-size:13px}
+
+.about{display:grid;gap:40px;grid-template-columns:1fr 1fr;align-items:center}
+.about .art{aspect-ratio:1;border-radius:24px;background:radial-gradient(circle at 30% 30%,#ffd0e0,#f48fb1 60%,#d6336c);display:flex;align-items:center;justify-content:center;color:#fff;font-size:150px}
+.about p{margin-bottom:14px;color:var(--muted);font-size:17px}
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px;font-size:15px}
+.feat span::before{content:"✿ ";color:var(--pink)}
+
+.gift{text-align:center;background:linear-gradient(135deg,var(--pink),#f06292);color:#fff;border-radius:26px;padding:56px 24px}
+.gift h2{font-size:34px;margin-bottom:10px}
+.gift p{max-width:520px;margin:0 auto 24px;opacity:.95}
+.gift .btn{background:#fff;color:var(--pink-d)}
+
+.contacts{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.contacts .card h3{font-size:19px}
+.contacts a{color:var(--pink-d)}
+.contacts a:hover{text-decoration:underline}
+
+footer{background:#2b1f24;color:#d9c9cf;text-align:center;padding:30px 20px;font-size:14px}
+
+@media(max-width:800px){
+  nav{display:none;position:absolute;top:64px;left:0;right:0;background:var(--blush);border-bottom:1px solid var(--line);padding:16px 20px}
+  nav.open{display:block}
+  nav ul{flex-direction:column;gap:14px}
+  .burger{display:block}
+  .nav>.btn{display:none}
+  .about{grid-template-columns:1fr}
+  .about .art{max-width:280px;margin:0 auto;font-size:110px}
+  section{padding:56px 0}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav sans">
+    <a href="#top" class="logo" style="font-family:Georgia,serif"><b>桜</b> Сакура <small>спа-салон</small></a>
+    <nav id="menu">
+      <ul>
+        <li><a href="#services">Услуги</a></li>
+        <li><a href="#programs">СПА-программы</a></li>
+        <li><a href="#about">О салоне</a></li>
+        <li><a href="#gift">Сертификаты</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+      </ul>
+    </nav>
+    <a class="btn" href="tel:+73472609059">Записаться</a>
+    <button class="burger" aria-label="Меню" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div class="wrap">
+    <div class="kanji">桜</div>
+    <h1>СПА-салон «Сакура»</h1>
+    <p>Массаж, обертывания, пилинги и СПА-программы в центре Уфы. Время, которое вы дарите себе.</p>
+    <div class="btns sans">
+      <a class="btn" href="#programs">СПА-программы</a>
+      <a class="btn ghost" href="#services">Все услуги</a>
+    </div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="title"><h2>Наши услуги</h2><p>Выберите интересующий вас раздел</p></div>
+    <div class="grid">
+      <div class="card"><div class="ic">💆</div><h3>Массаж</h3><ul>
+        <li>Массаж бамбуковыми палочками</li><li>Вакуумный массаж</li><li>Общеоздоровительный массаж</li>
+        <li>Лимфодренажный массаж</li><li>Антицеллюлитный массаж</li><li>Стоун-терапия (горячие камни)</li>
+        <li>Массаж релакс</li><li>Массаж лица, рук и стоп</li><li>Массаж Гуаша</li><li>Русский СПА-массаж</li></ul></div>
+      <div class="card"><div class="ic">🍯</div><h3>Обертывание</h3><ul>
+        <li>Шоколадное</li><li>Пелоидотерапия (грязелечение)</li><li>Талассотерапия</li>
+        <li>Медовое с аромамаслами</li><li>Горячее — парафанго</li><li>Гелевое Styx</li>
+        <li>Водорослевое</li><li>Виски-пеленания</li><li>Альгинатное</li></ul></div>
+      <div class="card"><div class="ic">✨</div><h3>Пилинг</h3><ul>
+        <li>Солевой</li><li>С чёрным мылом</li><li>С кокосовым маслом</li>
+        <li>С бриллиантовой пудрой</li><li>Ретиноевый</li><li>Молочный</li><li>Кераторегулирующий</li></ul></div>
+      <div class="card"><div class="ic">🌸</div><h3>СПА-процедуры</h3><ul>
+        <li>СПА-композиции</li><li>Программа «Инь-Ян»</li><li>Кедровая фитобочка</li>
+        <li>Парафинотерапия</li><li>Виски-пеленания</li></ul></div>
+      <div class="card"><div class="ic">🧖</div><h3>Уход за лицом</h3><ul>
+        <li>Чистка лица</li><li>Уход за сухой кожей</li><li>Уход за жирной кожей</li>
+        <li>Маски для лица</li><li>Безыгольная мезотерапия</li><li>Мезотерапия</li><li>Биоревитализация</li></ul></div>
+      <div class="card"><div class="ic">🧴</div><h3>Уход за телом и другое</h3><ul>
+        <li>Массаж, обертывание, пилинг</li><li>Парафинотерапия</li><li>Маникюр</li>
+        <li>Уход за волосами</li><li>Солярий</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="programs" class="alt">
+  <div class="wrap">
+    <div class="title"><h2>СПА-программы</h2><p>Каждая программа включает кедровую бочку, скраб, массаж и церемонию чаепития</p></div>
+    <div class="prog">
+      <div class="card"><span class="price">3000 ₽</span><h3>«Цветущая сакура»</h3><p>Кедровая бочка, скраб «Секрет Гейши», релакс-массаж, церемония чаепития.</p><span class="time sans">2 часа</span></div>
+      <div class="card"><span class="price">3000 ₽</span><h3>«Летнее настроение»</h3><p>Кедровая бочка, скраб «Фруктовый», релакс-массаж, церемония чаепития.</p><span class="time sans">2 часа</span></div>
+      <div class="card"><span class="price">3000 ₽</span><h3>«Марокканское путешествие»</h3><p>Кедровая бочка, скраб «Марокканский», релакс-массаж, церемония чаепития.</p><span class="time sans">2 часа</span></div>
+      <div class="card"><span class="price">3000 ₽</span><h3>«Антистресс»</h3><p>Кедровая бочка, скраб с натуральным эфирным маслом и цветками лаванды, расслабляющий массаж, церемония чаепития.</p><span class="time sans">2 часа</span></div>
+      <div class="card"><span class="price">3000 ₽</span><h3>«Витаминный заряд»</h3><p>Кедровая бочка, скраб с маслом и экстрактом облепихи, расслабляющий массаж, церемония чаепития.</p><span class="time sans">2 часа</span></div>
+      <div class="card"><span class="price">3000 ₽</span><h3>«Для Императора»</h3><p>Для мужчин. Кедровая бочка, скраб «Морская соль», релакс-массаж, церемония чаепития.</p><span class="time sans">2 часа</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about">
+    <div class="art">桜</div>
+    <div>
+      <h2 style="font-size:36px;color:var(--pink-d);margin-bottom:16px">О салоне</h2>
+      <p>«Сакура» — спа-салон в Уфе, где традиции восточного ухода сочетаются с современными методиками. Мы заботимся о теле, коже и настроении каждого гостя.</p>
+      <p>В программах — натуральные масла, скрабы и маски, кедровая фитобочка и неспешная церемония чаепития.</p>
+      <div class="feat sans"><span>Опытные мастера</span><span>Натуральная косметика</span><span>Уютная атмосфера</span><span>Подарочные сертификаты</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="gift" style="padding-top:0">
+  <div class="wrap">
+    <div class="gift">
+      <h2>Подарочные сертификаты</h2>
+      <p>Подарите близким заботу и отдых — сертификат на любую процедуру или СПА-программу.</p>
+      <a class="btn sans" href="tel:+73472609059">Узнать подробнее</a>
+    </div>
+  </div>
+</section>
+
+<section id="contacts" class="alt">
+  <div class="wrap">
+    <div class="title"><h2>Контакты</h2><p>Будем рады видеть вас</p></div>
+    <div class="contacts sans">
+      <div class="card"><h3>📍 Адрес</h3><p>г. Уфа, ул. Архитектурная, 22<br>(за кинотеатром «Победа»)</p></div>
+      <div class="card"><h3>📞 Телефоны</h3><p><a href="tel:+73472609059">+7 (347) 260-90-59</a><br><a href="tel:+79625280010">+7 962 52-800-10</a></p></div>
+      <div class="card"><h3>🕙 Режим работы</h3><p>Пн–Пт: 10:00 – 20:00<br>Сб–Вс: 10:00 – 20:00</p></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="sans">© СПА-салон «Сакура», Уфа. Все права защищены.</footer>
+
+<script>
+// falling petals
+(function(){
+  var h=document.querySelector('.hero');
+  for(var i=0;i<16;i++){
+    var p=document.createElement('i');p.className='petal';
+    p.style.left=Math.random()*100+'%';
+    p.style.animationDuration=(8+Math.random()*10)+'s';
+    p.style.animationDelay=(-Math.random()*14)+'s';
+    p.style.transform='scale('+(.6+Math.random()*.9)+')';
+    h.appendChild(p);
+  }
+  document.querySelectorAll('nav a').forEach(function(a){a.onclick=function(){document.getElementById('menu').classList.remove('open')}});
+})();
+</script>
+</body>
+</html>
