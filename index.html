@@ -47,6 +47,14 @@ main,footer{position:relative;z-index:1}
 @keyframes fall{0%{transform:translateY(0) rotate(0);opacity:0}10%{opacity:.75}90%{opacity:.75}100%{transform:translateY(90vh) rotate(540deg);opacity:0}}
 @keyframes sway{from{transform:translateX(-25px)}to{transform:translateX(25px)}}
 @media (prefers-reduced-motion:reduce){.petal{display:none}}
+/* переливающиеся иероглифы */
+.hero .kanji,.logo b{background:linear-gradient(110deg,#a8204f 0%,#d6336c 25%,#ffb3cf 45%,#c9a24b 55%,#d6336c 75%,#a8204f 100%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:shimmer 6s linear infinite}
+.logo b{display:inline-block}
+.about .art{background:linear-gradient(135deg,#ffd0e0,#f48fb1,#d6336c,#f06292,#ffd0e0);background-size:300% 300%;animation:flow 8s ease-in-out infinite;text-shadow:0 0 24px rgba(255,255,255,.7)}
+@keyframes shimmer{from{background-position:0% 0}to{background-position:250% 0}}
+@keyframes flow{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+@media (prefers-reduced-motion:reduce){.hero .kanji,.logo b,.about .art{animation:none}}
+
 
 /* sections */
 section{padding:80px 0;scroll-margin-top:64px}
@@ -73,7 +81,7 @@ section{padding:80px 0;scroll-margin-top:64px}
 .prog .time{display:inline-block;margin-top:12px;background:var(--pink-l);color:var(--pink-d);padding:3px 12px;border-radius:99px;font-size:13px}
 
 .about{display:grid;gap:40px;grid-template-columns:1fr 1fr;align-items:center}
-.about .art{aspect-ratio:1;border-radius:24px;background:radial-gradient(circle at 30% 30%,#ffd0e0,#f48fb1 60%,#d6336c);display:flex;align-items:center;justify-content:center;color:#fff;font-size:150px}
+.about .art{aspect-ratio:1;border-radius:24px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:150px}
 .about p{margin-bottom:14px;color:var(--muted);font-size:17px}
 .feat{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px;font-size:15px}
 .feat span::before{content:"✿ ";color:var(--pink)}
